@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATION</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-size: cover;
+			/*background-image: url(glass.jpg);*/
+			background-color:#AABCDD  ;  
+			background-position: center;
+			font-family: sans-serif;
+		}
+		.login{
+			height:500px;
+			width: 800px;
+			background-position: center;
+			background-color:#7BA8F6   ;
+			font-family: 'sans-serif';
+			font-size: 17px;
+			padding-left: 100px;
+			padding-top: 50px;
+			margin-left: 100px;
+			margin-top: 100px;
+
+		}
+
+		button{
+			width: 100px;
+			height: 25px;
+
+		}
+		
+		
+		
+	</style>
+	<script type="text/javascript">
+		function registration(){
+			f_name = document.getElementById('id_f_name');
+			l_name = document.getElementById('id_l_name');
+			email = document.getElementById('id_e_mail');
+			selection_msg1 = document.getElementById("select_msg1")
+			selection_msg2 = document.getElementById("select_msg2")
+			selection_msg3 = document.getElementById("select_msg3")
+			selection_err_obj = document.getElementsByClassName('select')
+			phone = document.getElementById('id_phone');
+			address = document.getElementById('id_address');
+			radio_obj=document.getElementsByName("gender");
+			radio_err_obj=document.getElementsByClassName('radio');
+		    gender = document.getElementsByClassName('gender');
+		    salary = document.getElementById('id_sal');
+		    hire_date = document.getElementById('id_hire');
+		    error = 0;
+		    if (f_name.value=="") {
+				f_name.style.borderColor="red";
+				document.getElementById('msg').innerHTML="!";
+			}
+
+			if (l_name.value=="") {
+				l_name.style.borderColor="red";
+				document.getElementById('msg2').innerHTML="!";
+			}
+			if (email.value=="") {
+				email.style.borderColor="red";
+				document.getElementById('msg3').innerHTML="!";
+			}
+
+			if (phone.value=="") {
+				phone.style.borderColor="red";
+				document.getElementById('msg4').innerHTML="!";
+			}
+
+			if (address.value=="") {
+				address.style.borderColor="red";
+				document.getElementById('msg5').innerHTML="!";
+			}
+
+			if (radio_obj[0].checked == false && radio_obj[1].checked == false) {
+				radio_err_obj[0].style.color = "red";
+				radio_err_obj[1].style.color = "red";
+
+			}
+
+			// 
+			if(selection_msg1.value==0){
+				selection_msg1.style.color = "red";
+				error++;
+
+			}
+
+			if(selection_msg2.value==0){
+				selection_msg2.style.color = "red";
+				error++;
+
+			}
+			if(selection_msg3.value==0){
+				selection_msg3.style.color = "red";
+				error++;
+
+			}
+
+			if (salary.value=="") {
+				salary.style.borderColor = "red";
+				document.getElementById('msg7').innerHTML="**";
+			}
+
+			if (hire_date.value=="") {
+				hire_date.style.borderColor = "red";
+				document.getElementById('msg8').innerHTML="**";
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div class="login">
+		<h2>Registration</h2>
+		<form action="/hrapp/userregisration/" method="POST">
+		<table cellspacing="10px">  
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" name="fname" id="id_f_name"><span style="color: red" id="msg"></span></td>
+			</tr>
+
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lname" id="id_l_name"><span style="color: red" id="msg2"></span></td>
+			</tr>
+
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"  id="id_e_mail"><span style="color: red" id="msg3"></span></td>
+			</tr>
+
+			<tr>
+				<td>Date Of Birth</td>
+				<td colspan="2" width="4px" ><select id ="select_msg1"><span class="select"></span>
+				<option value="0">Day</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+				<option>15</option>
+				<option>16</option>
+				<option>17</option>
+				<option>18</option>
+				<option>19</option>
+				<option>20</option>
+				<option>21</option>
+				<option>22</option>
+				<option>23</option>
+				<option>24</option>
+				<option>25</option>
+				<option>26</option>
+				<option>27</option>
+				<option>28</option>
+				<option>29</option>
+				<option>30</option>
+				<option>31</option>
+			
+
+			</select>
+			<!-- <td align="left" bgcolor="black" width="1px"> --><select id ="select_msg2">
+				<option value="0">Month</option>
+				<option>Jan</option>
+				<option>Feb</option>
+				<option>Mar</option>
+				<option>Apr</option>
+				<option>May</option>
+				<option>Jun</option>
+				<option>Jul</option>
+				<option>Aug</option>
+				<option>Sep</option>
+				<option>Oct</option>
+				<option>Nov</option>
+				<option>Dec</option>
+			</select>
+			<!-- </td> -->
+			<!-- <td width="1px" align="left" bgcolor="red"> --><select id="select_msg3">
+				<option value="0">Year</option>
+				<option>1990</option>
+				<option>1991</option>
+				<option>1992</option>
+				<option>1993</option>
+				<option>1994</option>
+				<option>1995</option>
+				<option>1996</option>
+				<option>1998</option>
+				<option>1999</option>
+				<option>2000</option>
+			</select>
+				
+			</tr>
+
+			<tr>
+				<td>Phone</td>
+				<td><input type="text" name="phone" id="id_phone" ><span style="color: red" id="msg4"></span></td>
+			</tr>
+
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="address" id="id_address"><span style="color: red" id="msg5"></span></td>
+			</tr>
+
+			<tr>
+				<td>Gender</td>
+			    <td ><input type="radio" name="gender"><span class="radio">Male</span></td>
+			    <td><input type="radio" name="gender"><span class="radio">Female</span></td>
+			    <span style="color: red" id="msg6"></span>
+			</tr>
+
+			<tr>
+				<td>Salary</td>
+				<td><input type="text" name="salary" id="id_sal"><span style="color: red" id="msg7"></span></td>
+			</tr>
+
+			<tr>
+				<td>Hire Date</td>
+				<td><input type="text" name="hire_date" id="id_hire"><span style="color: red" id="msg8"></span></td>
+			</tr>
+
+
+		</table><br>
+		<button type="button" onclick="registration()">Submit</button>
+		
+	</form>
+	</div>
+
+</body>
+</html>

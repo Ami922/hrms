@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.container{
+			padding: 50px 100px 10px 200px;
+			border-color: 'purple';
+
+		}
+		button{
+			text-indent: all;
+		}
+	</style>
+	<script type="text/javascript">
+		function performanceEvaluation(){
+			performance_date = document.getElementsById('eval_date');
+			duty_describe = document.getElementByName('duties');
+			emp_strength = document.getElementByName('strength');
+			emp_weakness = document.getElementByName('weakness');
+			emp_skill_improve = document.getElementByName('skills');
+			error = 0;
+		    if (performance_date.value=="") {
+				performance_date.style.borderColor="red";
+				document.getElementById('msg1').innerHTML="!";
+			}
+			 if (duty_describe.value=="") {
+				duty_describe.style.borderColor="red";
+				document.getElementById('msg2').innerHTML="!";
+			}
+			 if (emp_strength.value=="") {
+				emp_strength.style.borderColor="red";
+				document.getElementById('msg3').innerHTML="!";
+			}
+			 if (emp_weakness.value=="") {
+				emp_weakness.style.borderColor="red";
+				document.getElementById('msg4').innerHTML="!";
+			}
+			 if (emp_skill_improve.value=="") {
+				emp_skill_improve.style.borderColor="red";
+				document.getElementById('msg5').innerHTML="!";
+			}
+
+
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<form>
+		<h1>Performance Evaluation</h1>
+		<table border="5">
+			<tr>
+				<td>Employee Name</td>
+				<td><input type="text" name="txt_emp_name"></td>
+				<td>Employee Id</td>
+				<td><input type="text" name="txt_emp_id"></td>
+			</tr>
+
+			<tr>
+				<td>Departement</td>
+				<td>
+					<select>
+						<option>Technical</option>
+						<option>Designning</option>
+						<option>Coding</option>
+						<option>Operational</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Project</td>
+				<td><input type="text" name="project_name"></td>
+				<td>Date</td>
+				<td><input type="Date" name="date" id="eval_date"><span style="color: red" id="msg1"></span></td>
+			</tr>
+
+			<tr>
+				<td colspan="4"><br />
+                    <label>Description of Duties in Relation to Project</label><br>
+                    <textarea name="duties" rows="7" cols="40" style="width: 650px;"></textarea><span style="color: red" id="msg2"></span>
+                </td>
+			</tr> 
+
+			<tr>
+				<td colspan="2"><br />
+                    <label>Employee Strength</label><br>
+                    <textarea name = "strength" rows="7" cols="40" style="width: 650px;"></textarea><span style="color: red" id="msg3"></span>
+                </td>
+			</tr> 
+
+			<tr>
+				<td colspan="2"><br />
+                    <label>Employee Weakness</label><br>
+                    <textarea name="weakness" rows="7" cols="40" style="width: 650px;"></textarea><span style="color: red" id="msg4"></span>
+                </td>
+			</tr> 
+
+			<tr>
+				<td colspan="2"><br />
+                    <label>Plan for Improvement Skills</label><br>
+                    <textarea name="skills" rows="7" cols="40" style="width: 650px; "></textarea><span style="color: red" id="msg5"></span>
+                </td>
+			</tr> 
+
+			<tr>
+				<td><button id="submit" onclick="performanceEvaluation()">SUBMIT</button></td>
+			</tr>
+
+
+
+		</table>
+	</form>
+	</div>
+	
+</body>
+</html>
