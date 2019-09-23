@@ -43,7 +43,7 @@
 			selection_msg1 = document.getElementById("select_msg1")
 			selection_msg2 = document.getElementById("select_msg2")
 			selection_msg3 = document.getElementById("select_msg3")
-			selection_err_obj = document.getElementsByClassName('select')
+			selection_err_obj = document.getElementByClassName('select')
 			phone = document.getElementById('id_phone');
 			address = document.getElementById('id_address');
 			radio_obj=document.getElementsByName("gender");
@@ -81,8 +81,7 @@
 				radio_err_obj[1].style.color = "red";
 
 			}
-
-			// 
+			
 			if(selection_msg1.value==0){
 				selection_msg1.style.color = "red";
 				error++;
